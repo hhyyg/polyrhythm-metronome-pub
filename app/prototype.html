@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>Polyrhythm Metronome</title>
+</head>
+
+<body>
+    <h1>Polyrhythm Metronome</h1>
+
+    <label>BPM:
+        <input type="number" id="bpm-input" value="60" />
+    </label>
+    <button id="start-button">start</button>
+    <button id="stop-button">stop</button>
+
+    <div id="metronome-left">
+        <h2>Left</h2>
+        <label>division:
+            <input type="number" value="1" class="division-input" />
+        </label>
+    </div>
+
+    <div id="metronome-right">
+        <h2>Right</h2>
+        <label>division:
+            <input type="number" value="1" class="division-input" />
+        </label>
+    </div>
+
+    <script type="module" src="./js/metronome.js"></script>
+    <script type="module" src="./js/conductor.js"></script>
+    <script type="module" src="./js/prototype.js"></script>
+</body>
+
+</html>

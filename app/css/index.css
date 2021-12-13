@@ -1,0 +1,66 @@
+
+body {
+    margin: 0;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.app {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+}
+
+@media screen and (min-width: 767px) {
+    .app {
+        width: 767px;
+    }
+}
+
+h1 {
+    font-size: large;
+}
+
+h2 {
+    margin: 0;
+    font-size: medium;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.control-grid .value-label {
+    font-size: xx-large;
+}
+
+.control-grid .control.decrement {
+    text-align: right;
+}
+
+.control-grid .control.increment {
+    text-align: left;
+}
+
+.division-container {
+    margin: 32px 0;
+}
+
+.play-container {
+    margin: 18px 0;
+}
+
+.division-container .division {
+    margin: 16px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}

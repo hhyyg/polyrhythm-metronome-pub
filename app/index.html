@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>Polyrhythm Metronome</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <main class="mdl-layout__content app">
+
+            <div class="bpm-container">
+                <h2>BPM</h2>
+
+                <my-number-control id="bpm-control" numberValue="60" minValue="10" maxValue="300"></my-number-control>
+            </div>
+
+            <div class="division-container">
+                <div class="division right">
+                    <my-number-control id="division-right-control" numberValue="1" minValue="1" maxValue="7">
+                    </my-number-control>
+                    <div>
+                        <div id="canvas-right" width="200px" height="100px">
+                        </div>
+                    </div>
+                </div>
+                <div class="division left">
+                    <my-number-control id="division-left-control" numberValue="1" minValue="1" maxValue="7">
+                    </my-number-control>
+                    <div>
+                        <div id="canvas-left" width="200px" height="100px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="play-container">
+                <button id="play-button"
+                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">play_arrow</i>
+                </button>
+            </div>
+        </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">
+                    Polyrhythm Metronome
+                </div>
+            </div>
+            <div class="mdl-mini-footer__right-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li>
+                        <a href="#"><span class="material-icons">language</span></a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <template id="template-my-number-control">
+        <div class="control-grid">
+            <div class="control decrement">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                    <i class="material-icons">remove</i>
+                </button>
+            </div>
+            <div class="value-label">3</div>
+            <div class="control increment">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <script type="module" src="./js/my-number-control-html-element.js"></script>
+    <script type="module" src="./js/metronome.js"></script>
+    <script type="module" src="./js/conductor.js"></script>
+    <script type="module" src="./js/canvas.js"></script>
+    <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
