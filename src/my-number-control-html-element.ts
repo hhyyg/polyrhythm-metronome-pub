@@ -13,11 +13,20 @@ export class MyNumberControlHTMLElement extends HTMLElement {
         // bind to elements
         this._setNumberValueToLabel(this.numberValue);
 
-        this._getIncrementButton().addEventListener('mouseup', this._onCounterMouseUp.bind(this));
-        this._getIncrementButton().addEventListener('mousedown', this._onIncrementMouseDown.bind(this));
+        if (window.ontouchstart == undefined) {
+            this._getIncrementButton().addEventListener('mouseup', this._onCounterMouseUp.bind(this));
+            this._getIncrementButton().addEventListener('mousedown', this._onIncrementMouseDown.bind(this));
+    
+            this._getDecrementButton().addEventListener('mouseup', this._onCounterMouseUp.bind(this));
+            this._getDecrementButton().addEventListener('mousedown', this._onDecrementMouseDown.bind(this));
+        } else {
 
-        this._getDecrementButton().addEventListener('mouseup', this._onCounterMouseUp.bind(this));
-        this._getDecrementButton().addEventListener('mousedown', this._onDecrementMouseDown.bind(this));
+            this._getIncrementButton().addEventListener('touchend', this._onCounterMouseUp.bind(this));
+            this._getIncrementButton().addEventListener('touchstart', this._onIncrementMouseDown.bind(this));
+    
+            this._getDecrementButton().addEventListener('touchend', this._onCounterMouseUp.bind(this));
+            this._getDecrementButton().addEventListener('touchstart', this._onDecrementMouseDown.bind(this));
+        }
 
         this._updateControlButtons();
 
