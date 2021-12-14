@@ -41,7 +41,7 @@ function draw(p: any, metronome: Metronome, otherMetronome: Metronome) {
 
     const currentTimeX = (metronome.getNowPositionXAtOneBpm() * p.width) + writeAreaX;
     const divisionWidth = p.width / metronome.division;
-    const matchDivisionMargin = 10;
+    const matchDivisionMargin = 5;
 
     const divisionLineXArray = Array.from(Array(metronome.division).keys())
         .map(divisionIndex => {
