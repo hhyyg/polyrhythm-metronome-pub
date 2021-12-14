@@ -1,8 +1,9 @@
 
 body {
     margin: 0;
-    /* display: flex;
-    justify-content: center; */
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .app {
