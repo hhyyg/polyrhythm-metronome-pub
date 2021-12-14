@@ -11,7 +11,7 @@ export class MyNumberControlHTMLElement extends HTMLElement {
         this.innerHTML = template.innerHTML;
         // bind to elements
         this._setNumberValueToLabel(this.numberValue);
-        if (window.ontouchstart == undefined) {
+        if (!('ontouchstart' in window)) {
             this._getIncrementButton().addEventListener('mouseup', this._onCounterMouseUp.bind(this));
             this._getIncrementButton().addEventListener('mousedown', this._onIncrementMouseDown.bind(this));
             this._getDecrementButton().addEventListener('mouseup', this._onCounterMouseUp.bind(this));

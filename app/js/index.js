@@ -3,7 +3,12 @@ import { Conductor } from "./conductor.js";
 import { MyNumberControlHTMLElement } from "./my-number-control-html-element.js";
 customElements.define("my-number-control", MyNumberControlHTMLElement);
 const playButton = document.getElementById('play-button') ?? throwError('not found #play-button');
-playButton.addEventListener('click', onClickPlayButton);
+if ('ontouchstart' in window) {
+    playButton.addEventListener('touchstart', onClickPlayButton);
+}
+else {
+    playButton.addEventListener('click', onClickPlayButton);
+}
 const bpmControl = document.querySelector('#bpm-control') ?? throwError('not found #bpm-control');
 bpmControl.addEventListener(MyNumberControlHTMLElement.EventName_ValueChanged, onChangeInputControl);
 const divisionRightControl = document.querySelector('#division-right-control') ?? throwError('not found #division-right-control');
