@@ -31,9 +31,16 @@ h2 {
     font-size: medium;
 }
 
+.bpm-container .control-grid {
+    grid-template-columns: 1fr 60px 1fr;
+}
+
+.division-container .control-grid {
+    grid-template-columns: 1fr 40px 1fr;
+}
+
 .control-grid {
     display: grid;
-    grid-template-columns: 1fr 60px 1fr;
     align-items: center;
     column-gap: 10px;
 }
@@ -59,9 +66,17 @@ h2 {
 }
 
 .division-container .division {
-    margin: 16px 0;
+    margin: 16px 2px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.6fr 0.8fr;
     align-items: center;
     justify-items: center;
+}
+
+.mdl-logo {
+    margin-bottom: 0;
+}
+
+.mdl-mini-footer__link-list {
+    line-height: 36px;
 }
